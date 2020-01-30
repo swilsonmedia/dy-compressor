@@ -1,0 +1,35 @@
+{
+    "name": "dy-compressor",
+    "version": "1.0.0",
+    "description": "Compress and Beautify Dynamic Yield Content",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/swilsonmedia/dy-compressor.git"
+    },
+    "author": "Stephen Wilson",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/swilsonmedia/dy-compressor/issues"
+    },
+    "homepage": "https://github.com/swilsonmedia/dy-compressor#readme",
+    "devDependencies": {
+        "eslint": "^6.8.0",
+        "eslint-config-prettier": "^6.9.0",
+        "nodemon": "^2.0.2",
+        "prettier": "^1.19.1"
+    },
+    "dependencies": {
+        "beautify": "0.0.8",
+        "body-parser": "^1.19.0",
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "html-minifier": "^4.0.0",
+        "pretty": "^2.0.0",
+        "uglify-js": "^3.7.6",
+        "uglifycss": "0.0.29"
+    }
+}
