@@ -51,7 +51,7 @@ app.post('/minify', function(req, res) {
 				compress: {
 					expression: true
 				}
-			})
+			}).code
 		});
 	}
 
