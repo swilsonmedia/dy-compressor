@@ -1,0 +1,31 @@
+<div class="recSlideWrapper">
+	<h1 class="sectonHead title_${dyVariationId}">${Title}</h1>
+	<div id="${container-id}" class="panelSlider">
+		<div class="prev"></div>
+		<div class="recs_${dyVariationId} panelSliderOverflow">
+			<div class="recsList panelSliderContent">
+				${#Recommendation}
+				<a href="${url}" class="rec_item_${dyVariationId}">
+					<img
+						src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+						data-src="${Image_url}?width=${image-width}"
+						width="${image-width}"
+						height="${image-width}"
+					/>
+					<div class="rec_name">${Name}</div>
+
+					<div class="rec_price">${web_price_html}</div>
+					<div class="rec_review">
+						<div
+							class="customerReviewStars styleReviews jsHide"
+							data-bv-show="inline_rating"
+							data-bv-product-id="${id}"
+						></div>
+					</div>
+				</a>
+				${/Recommendation}
+			</div>
+		</div>
+		<div class="next"></div>
+	</div>
+</div>

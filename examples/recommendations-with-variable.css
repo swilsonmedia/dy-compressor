@@ -1,0 +1,79 @@
+		.recSlideWrapper .panelSlider{
+			position: relative;
+		}
+
+		.recSlideWrapper .panelSliderOverflow{
+			position: relative;
+			overflow: hidden;											
+			margin: 0 30px;
+			
+		}
+
+		.recSlideWrapper .panelSliderContent{
+			width: 4000px;
+			position: relative;
+			left: 0;
+		}
+
+		.recSlideWrapper .panelSliderContent > a{
+			display: block;
+			float: left;
+			width: ${image-width}px;
+			text-align: center;
+			font-size: 12px;
+			text-decoration: none;
+			color: initial;
+			    box-sizing: content-box;
+		}
+
+		.recSlideWrapper .panelSliderContent > a > img{
+			width: 100%;
+			height: auto;
+			display: block;
+			margin-bottom: 10px;
+		}
+
+		.recSlideWrapper .prev, .recSlideWrapper .next{
+			width: 30px;
+			height: 100%;
+			cursor: pointer;
+			background: url(https://img.smartpak.com/images/ProductClass/TES/smallArrows.png) no-repeat 100% 50%;
+			position: absolute;
+			top: 0;
+		}
+
+		.recSlideWrapper .prev{
+			left: 0;
+			-webkit-transform: rotate(180deg);
+			        transform: rotate(180deg);
+		}
+
+		.recSlideWrapper .next{
+			right: 0;
+		}
+
+		.noControls .recSlideWrapper .prev, 
+		.noControls .recSlideWrapper .next{
+			display: none;
+		}
+
+		.recSlideWrapper .rec_name{
+			font-weight: bold;
+			margin-bottom: 10px;
+			min-height: 35px;
+			color: #0071cf;
+		}
+
+		.recSlideWrapper .rec_price{
+			font-weight: bold;
+			color: initial;
+			margin-bottom: 10px;
+		}
+		
+		.recSlideWrapper .rec_price .sale_price{
+		  color: #f60;
+		}
+		
+		.recSlideWrapper .rec_price .strike_price{
+		  text-decoration: line-through;
+		}
