@@ -49,7 +49,8 @@ app.post('/minify', function(req, res) {
 			data: uglifyJS(req.body.data, {
 				mangle: false,
 				compress: {
-					expression: true
+					expression: true,
+					conditionals: false
 				}
 			}).code
 		});
