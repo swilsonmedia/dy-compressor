@@ -5,7 +5,7 @@ const app = express();
 
 const htmlMinify = require('html-minifier').minify;
 const beautify = require('beautify');
-const prettyCSS = require('prettycss').parse;
+const prettyCSS = require('PrettyCSS').parse;
 const pretty = require('pretty');
 const uglifyJS = require('uglify-js').minify;
 const uglifyCSS = require('uglifycss').processString;
