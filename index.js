@@ -100,12 +100,17 @@ app.post('/beautify', function(req, res) {
 	}
 
 	if (req.body.type.toLowerCase() === CSS) {
+		let css = req.body.data.replace(/\${(.*?)}/g, '[[$1]]');
+
+		css = prettyCSS(css, {
+			autocorrect: false
+		}).toString();
+
+		css = css.replace(/\[\[(.*?)\]\]/g, '${$1}');
+
 		return res.json({
 			status: 'ok',
-			data: prettyCSS(req.body.data, {
-				autocorrect: false,
-				block_post: '}'
-			}).toString()
+			data: css
 		});
 	}
 
