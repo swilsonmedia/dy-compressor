@@ -16,12 +16,7 @@ const JS = 'js';
 const CSS = 'css';
 const HTML = 'html';
 
-app.use(
-	cors({
-		origin: 'https://adm.dynamicyield.com/',
-		optionsSuccessStatus: 200
-	})
-);
+app.use(cors());
 app.use(bodyParser.json());
 
 app.get('*', function(req, res) {
