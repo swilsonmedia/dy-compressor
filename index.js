@@ -5,6 +5,7 @@ const app = express();
 
 const htmlMinify = require('html-minifier').minify;
 const beautify = require('beautify');
+const prettyCSS = require('prettycss').parse;
 const pretty = require('pretty');
 const uglifyJS = require('uglify-js').minify;
 const uglifyCSS = require('uglifycss').processString;
@@ -50,7 +51,14 @@ app.post('/minify', function(req, res) {
 				mangle: false,
 				compress: {
 					expression: true,
-					conditionals: false
+					conditionals: false,
+					inline: false,
+					keep_fnames: true,
+					negate_iife: false
+				},
+				output: {
+					quote_style: 1,
+					braces: true
 				}
 			}).code
 		});
@@ -94,7 +102,10 @@ app.post('/beautify', function(req, res) {
 	if (req.body.type.toLowerCase() === CSS) {
 		return res.json({
 			status: 'ok',
-			data: beautify(req.body.data, {format: CSS})
+			data: prettyCSS(req.body.data, {
+				autocorrect: false,
+				block_post: '}'
+			}).toString()
 		});
 	}
 
