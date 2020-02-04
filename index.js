@@ -93,20 +93,26 @@ app.post('/beautify', function(req, res) {
 	}
 
 	if (req.body.type.toLowerCase() === HTML) {
+		let html = req.body.data.replace(/\${#(.*?)}/g, '${[[start]]$1}').replace(/\${\/(.*?)}/g, '${[[end]]$1}');
+
+		html = pretty(html);
+
+		html = html.replace(/\${\[\[start\]\](.*?)}/g, '\n${#$1}\n').replace(/\${\[\[end\]\](.*?)}/g, '\n${/$1}\n');
+
 		return res.json({
 			status: 'ok',
-			data: pretty(req.body.data)
+			data: html
 		});
 	}
 
 	if (req.body.type.toLowerCase() === CSS) {
-		let css = req.body.data.replace(/\${(.*?)}/g, '[[$1]]');
+		let css = req.body.data.replace(/\${(.*?)}/g, '**$1**');
 
 		css = prettyCSS(css, {
 			autocorrect: false
 		}).toString();
 
-		css = css.replace(/\[\[(.*?)\]\]/g, '${$1}');
+		css = css.replace(/\*\*(.*?)\*\*/g, '${$1}');
 
 		return res.json({
 			status: 'ok',
