@@ -50,12 +50,18 @@ app.post('/minify', function(req, res) {
 			data: uglifyJS(req.body.data, {
 				mangle: false,
 				compress: {
+					evaluate: false,
 					expression: true,
 					conditionals: false,
 					inline: false,
 					keep_fnames: true,
 					negate_iife: false,
-					sequences: false
+					sequences: false,
+					drop_console: true,
+					unused: true,
+					if_return: true,
+					join_vars: true,
+					dead_code: true
 				},
 				output: {
 					quote_style: 1,
